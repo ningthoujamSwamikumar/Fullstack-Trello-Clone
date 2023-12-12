@@ -7,11 +7,9 @@ const OrganizationLayout = ({
     children: React.ReactNode;
 })=>{
     return (
-        <div>
+        <div className="h-full">
             <Navbar />
-            <div className="mt-10">
-                {children}
-            </div>
+            {children}
         </div>
     )
 }
