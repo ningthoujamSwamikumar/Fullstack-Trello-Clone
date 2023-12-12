@@ -1,17 +1,17 @@
-import Navbar from "../../_components/Navbar";
+import { OrgControl } from "./_components/org-control";
 
 
-const OrganizationLayout = ({
+const OrganizationIdLayout = ({
     children
 }:{
     children: React.ReactNode;
-})=>{
+}) =>{
     return (
-        <div className="h-full">
-            <Navbar />
+        <div>
+            <OrgControl />
             {children}
         </div>
     )
 }
 
-export default OrganizationLayout;
+export default OrganizationIdLayout;
