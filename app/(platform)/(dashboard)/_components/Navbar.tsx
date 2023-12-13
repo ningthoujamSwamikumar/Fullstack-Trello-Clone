@@ -7,7 +7,7 @@ const DashboardNavbar = ()=>{
     return (
         <nav className="fixed z-50 top-0 px-4 w-full h-14 border-b shadow-sm  bg-white flex items-center" >
             {/* TODO: Mobile Sidebar */}
-            <div className="flex items-center gap-x-4">
+            <div className="flex items-center md:gap-x-4">
                 <Logo />
                 <Button variant={"primary"} size={"sm"} className="hidden md:block h-auto py-1.5 px-2">
                     Create
