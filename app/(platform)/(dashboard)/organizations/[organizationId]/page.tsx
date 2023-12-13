@@ -1,10 +1,9 @@
 import { auth } from "@clerk/nextjs";
 
-const OrganizationPage = () => {
+export default function OrganizationPage(){
     return (
         <div>
+            organization page
         </div>
     )
 }
-
-export default OrganizationPage;
