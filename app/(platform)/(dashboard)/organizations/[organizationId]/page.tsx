@@ -1,7 +1,7 @@
-import { create } from "@/actions/create-board";
-import { Button } from "@/components/ui/button";
 import { db } from "@/lib/db";
+
 import { Board } from "./board";
+import { Form } from "./form";
 
 export default async function OrganizationIdPage(){
     //fetch content in server component
@@ -9,10 +9,7 @@ export default async function OrganizationIdPage(){
 
     return (
         <div>
-            <form action={create}>
-                <input id="title" name="title" required placeholder="Enter a board title" className="border-black border p-1" />
-                <Button type="submit" className="ml-2" size={"sm"}>Submit</Button>
-            </form>
+            <Form />
             <div className="space-y-2">
                 {
                     boards.map(board=>(
