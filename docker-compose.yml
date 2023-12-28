@@ -1,0 +1,28 @@
+version: "3.8"
+services:
+  db:
+    image: postgres
+    container_name: trello_pgdb
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: trello
+      POSTGRES_PASSWORD: trello-db-password
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin4_container
+    restart: always
+    ports:
+      - "8888:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@trello.com
+      PGADMIN_DEFAULT_PASSWORD: admin-password
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+
+volumes:
+  pgdata:
+  pgadmin-data:
