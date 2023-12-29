@@ -13,7 +13,7 @@ export const FormInput = ({errors}:FormInputProps)=>{
     const {pending} = useFormStatus();
 
     return (
-        <div className="flex flex-col space-y-2">
+        <div>
         <Input
           id="title"
           name="title"
