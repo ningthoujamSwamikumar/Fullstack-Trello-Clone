@@ -3,12 +3,8 @@
 import { createBoard } from "@/actions/create-board";
 import { useAction } from "@/hooks/use-action";
 import { toast } from "sonner";
-import { Popover } from "@/components/ui/popover";
-import {
-  PopoverClose,
-  PopoverContent,
-  PopoverTrigger,
-} from "@radix-ui/react-popover";
+import { Popover, PopoverClose, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
 import { FormInput } from "./form-input";
