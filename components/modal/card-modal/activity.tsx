@@ -9,7 +9,7 @@ interface ActivityProps {
 
 export const Activity = ({
     items,
-}: ActivityProps)=>{
+}: ActivityProps) => {
     return (
         <div className="flex items-start gap-x-3 w-full">
             <ActivityIcon className="h-5 w-5 mt-0.5 text-neutral-700" />
@@ -18,7 +18,7 @@ export const Activity = ({
                     Activity
                 </p>
                 <ol className="mt-2 space-y-4">
-                    {items.map((item)=>(
+                    {items.map((item) => (
                         <ActivityItem key={item.id} data={item} />
                     ))}
                 </ol>
@@ -27,7 +27,7 @@ export const Activity = ({
     )
 }
 
-Activity.Skeleton = ()=>{
+const ActivitySkeleton = () => {
     return (
         <div className="flex items-start gap-x-3 w-full">
             <Skeleton className="h-6 w-6 bg-neutral-200" />
@@ -38,3 +38,7 @@ Activity.Skeleton = ()=>{
         </div>
     )
 }
+Activity.Skeleton = <ActivitySkeleton />
+
+ActivitySkeleton.displayName = 'ActivitySkeleton';
+Activity.displayName = 'Activity';

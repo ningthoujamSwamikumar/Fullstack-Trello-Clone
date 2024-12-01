@@ -16,46 +16,46 @@ interface ActionsProps {
 }
 
 export const Actions = ({ data }: ActionsProps) => {
-    const params = useParams();
-    const cardModal = useCardModal();
+  const params = useParams();
+  const cardModal = useCardModal();
 
-    const {execute: executeDeleteCard, isLoading: isLoadingDelete} = useAction(deleteCard, {
-        onSuccess: (data)=>{
-            toast.success(`Card "${data.title}" deleted`);
-            cardModal.onClose();
-        },
-        onError: (error)=>{
-            toast.error(error);
-        }
-    })
+  const { execute: executeDeleteCard, isLoading: isLoadingDelete } = useAction(deleteCard, {
+    onSuccess: (data) => {
+      toast.success(`Card "${data.title}" deleted`);
+      cardModal.onClose();
+    },
+    onError: (error) => {
+      toast.error(error);
+    }
+  })
 
-    const {execute: executeCopyCard, isLoading: isLoadingCopy} = useAction(copyCard, {
-        onSuccess: (data)=>{
-            toast.success(`Card "${data.title}" copied`);
-            cardModal.onClose();
-        },
-        onError: (error)=>{
-            toast.error(error);
-        }
+  const { execute: executeCopyCard, isLoading: isLoadingCopy } = useAction(copyCard, {
+    onSuccess: (data) => {
+      toast.success(`Card "${data.title}" copied`);
+      cardModal.onClose();
+    },
+    onError: (error) => {
+      toast.error(error);
+    }
+  });
+
+  const onDelete = () => {
+    const boardId = params.boardId as string;
+
+    executeDeleteCard({
+      id: data.id,
+      boardId
     });
+  }
 
-    const onDelete = ()=>{
-        const boardId = params.boardId as string;
+  const onCopy = () => {
+    const boardId = params.boardId as string;
 
-        executeDeleteCard({
-            id: data.id,
-            boardId
-        });
-    }
-
-    const onCopy = ()=>{
-        const boardId = params.boardId as string;
-
-        executeCopyCard({
-            id: data.id,
-            boardId
-        });
-    }
+    executeCopyCard({
+      id: data.id,
+      boardId
+    });
+  }
 
   return (
     <div className="space-y-2 mt-2">
@@ -72,7 +72,7 @@ export const Actions = ({ data }: ActionsProps) => {
   );
 };
 
-Actions.Skeleton = () => {
+const ActionsSkeleton = () => {
   return (
     <div className="space-y-2 mt-2">
       <Skeleton className="w-20 h-4 bg-neutral-200" />
@@ -81,3 +81,7 @@ Actions.Skeleton = () => {
     </div>
   );
 };
+
+Actions.Skeleton = <ActionsSkeleton />;
+ActionsSkeleton.displayName = 'ActionsSkeleton';
+Actions.displayName = 'Actions';

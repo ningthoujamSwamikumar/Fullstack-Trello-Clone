@@ -10,7 +10,7 @@ export default async function OrganizationIdPage() {
       <Info />
       <Separator className="my-4" />
       <div className="px-2 md:px-4">
-        <Suspense fallback={<BoardList.Skeleton />}>
+        <Suspense fallback={BoardList.Skeleton}>
           <BoardList />
         </Suspense>
       </div>
