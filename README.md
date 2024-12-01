@@ -1,5 +1,5 @@
 # Fullstack-Trello-Clone
-practice project from [youtube](https://youtu.be/pRybm9lXW2c)
+A practice project from [youtube](https://youtu.be/pRybm9lXW2c), to practice on latest design techniques and keep my hands warm.
 
 
 
